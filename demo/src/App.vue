@@ -124,7 +124,7 @@ Vue.use(VueProgress)`
 export default {
 	data () {
 		return {
-			indeterminate: true,
+			indeterminate: false,
 			progress: 0,
 			counterClockwise: false,
 			hideBackground: false,

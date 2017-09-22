@@ -83,7 +83,7 @@ var Progress$$1 = { render: function render() {
 			dasharray: 0,
 			dashoffset: 0,
 			rotation: 0,
-			animating: true
+			animating: false
 		};
 	},
 
@@ -244,7 +244,7 @@ function registerComponents(Vue, prefix) {
 
 var plugin = {
 	// eslint-disable-next-line no-undef
-	version: "0.0.1",
+	version: "0.0.2",
 	install: function install(Vue, options) {
 		exports.globalOptions = Object.assign({}, {
 			installComponents: true,

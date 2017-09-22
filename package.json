@@ -1,6 +1,6 @@
 {
   "name": "vue-progress-path",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Vue Progress bars and loading indicators",
   "main": "dist/vue-progress-path.umd.js",
   "module": "dist/vue-progress-path.esm.js",

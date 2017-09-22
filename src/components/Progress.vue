@@ -93,7 +93,7 @@ export default {
 			dasharray: 0,
 			dashoffset: 0,
 			rotation: 0,
-			animating: true,
+			animating: false,
 		}
 	},
 
