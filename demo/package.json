@@ -1,6 +1,6 @@
 {
-  "name": "vue-progress-demo",
-  "description": "Demo for vue-progress package",
+  "name": "vue-progress-path-demo",
+  "description": "Demo for vue-progress-path package",
   "version": "1.0.0",
   "author": "Guillaume Chau <guillaume.b.chau@gmail.com>",
   "private": true,

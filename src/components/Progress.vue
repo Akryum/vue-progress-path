@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="vue-progress"
+		class="vue-progress-path"
 		:class="cssClass"
 		:style="style">
 		<svg
@@ -257,7 +257,7 @@ export default {
 </script>
 
 <style lang="stylus">
-.vue-progress {
+.vue-progress-path {
 	display: inline-block;
 
 	path {

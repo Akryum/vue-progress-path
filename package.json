@@ -1,11 +1,11 @@
 {
-  "name": "vue-progress",
+  "name": "vue-progress-path",
   "version": "0.0.1",
   "description": "Vue Progress bars and loading indicators",
-  "main": "dist/vue-progress.umd.js",
-  "module": "dist/vue-progress.esm.js",
-  "unpkg": "dist/vue-progress.min.js",
-  "repository": "git@github.com:Akryum/vue-progress.git",
+  "main": "dist/vue-progress-path.umd.js",
+  "module": "dist/vue-progress-path.esm.js",
+  "unpkg": "dist/vue-progress-path.min.js",
+  "repository": "git@github.com:Akryum/vue-progress-path.git",
   "author": "Guillaume Chau <guillaume.b.chau@gmail.com>",
   "license": "MIT",
   "scripts": {

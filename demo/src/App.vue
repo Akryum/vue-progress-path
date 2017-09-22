@@ -1,6 +1,6 @@
 <template>
 	<div id="app">
-		<h1>vue-progress</h1>
+		<h1>vue-progress-path</h1>
 
 		<pre>{{ installCode }}</pre>
 		<pre>{{ usageCode }}</pre>
@@ -114,11 +114,11 @@
 </template>
 
 <script>
-const installCode = `npm i -S vue-progress
-yarn add vue-progress`
+const installCode = `npm i -S vue-progress-path
+yarn add vue-progress-path`
 
 const usageCode = `import Vue from 'vue'
-import VueProgress from 'vue-progress'
+import VueProgress from 'vue-progress-path'
 Vue.use(VueProgress)`
 
 export default {
@@ -151,7 +151,7 @@ export default {
 </script>
 
 <style lang="stylus">
-@import '../../dist/vue-progress.css';
+@import '../../dist/vue-progress-path.css';
 
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

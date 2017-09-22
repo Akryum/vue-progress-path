@@ -1,6 +1,6 @@
-# vue-progress-demo
+# vue-progress-path-demo
 
-> Demo for vue-progress package
+> Demo for vue-progress-path package
 
 ## Build Setup
 

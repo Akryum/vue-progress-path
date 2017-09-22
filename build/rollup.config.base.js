@@ -10,7 +10,7 @@ const config = require('../package.json')
 
 export default {
 	input: 'src/index.js',
-	name: 'vue-progress',
+	name: 'vue-progress-path',
 	plugins: [
 		resolve({
 			jsnext: true,
@@ -20,7 +20,7 @@ export default {
 		cjs(),
 		vue({
 			css (style) {
-				fs.writeFileSync('dist/vue-progress.css', new CleanCSS().minify(style).styles)
+				fs.writeFileSync('dist/vue-progress-path.css', new CleanCSS().minify(style).styles)
 			},
 		}),
 		babel({

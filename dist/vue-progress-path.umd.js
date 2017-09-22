@@ -1,3 +1,9 @@
+(function (global, factory) {
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
+	typeof define === 'function' && define.amd ? define(['exports'], factory) :
+	(factory((global['vue-progress-path'] = {})));
+}(this, (function (exports) { 'use strict';
+
 var shapes = {
   circle: function circle(size) {
     return "\n  \tM " + size / 2 + ", " + size / 2 + "\n    m 0, -" + size / 2 + "\n    a " + size / 2 + "," + size / 2 + " 0 1 1 0," + size + "\n    a " + size / 2 + "," + size / 2 + " 0 1 1 0,-" + size + "\n  ";
@@ -14,7 +20,7 @@ var shapes = {
 };
 
 var Progress$$1 = { render: function render() {
-		var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { staticClass: "vue-progress", class: _vm.cssClass, style: _vm.style }, [_c('svg', { attrs: { "width": _vm.finalWidth, "height": _vm.finalHeight, "viewBox": '0 0 ' + _vm.finalWidth + ' ' + _vm.finalHeight } }, [_c('g', { attrs: { "transform": 'translate(' + (_vm.finalWidth - _vm.size) / 2 + ', ' + (_vm.finalHeight - _vm.size) / 2 + ') rotate(' + _vm.finalRotation + ', ' + _vm.size / 2 + ', ' + _vm.size / 2 + ')' } }, [_c('g', { staticClass: "container" }, [!_vm.hideBackground ? _c('path', { staticClass: "background", attrs: { "d": _vm.path } }) : _vm._e(), _c('path', { ref: "path", staticClass: "progress", attrs: { "d": _vm.path, "stroke-dasharray": _vm.finalDasharray + ' ' + _vm.finalDasharray, "stroke-dashoffset": _vm.finalDashoffset } })])])])]);
+		var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { staticClass: "vue-progress-path", class: _vm.cssClass, style: _vm.style }, [_c('svg', { attrs: { "width": _vm.finalWidth, "height": _vm.finalHeight, "viewBox": '0 0 ' + _vm.finalWidth + ' ' + _vm.finalHeight } }, [_c('g', { attrs: { "transform": 'translate(' + (_vm.finalWidth - _vm.size) / 2 + ', ' + (_vm.finalHeight - _vm.size) / 2 + ') rotate(' + _vm.finalRotation + ', ' + _vm.size / 2 + ', ' + _vm.size / 2 + ')' } }, [_c('g', { staticClass: "container" }, [!_vm.hideBackground ? _c('path', { staticClass: "background", attrs: { "d": _vm.path } }) : _vm._e(), _c('path', { ref: "path", staticClass: "progress", attrs: { "d": _vm.path, "stroke-dasharray": _vm.finalDasharray + ' ' + _vm.finalDasharray, "stroke-dashoffset": _vm.finalDashoffset } })])])])]);
 	}, staticRenderFns: [],
 	name: 'Progress',
 
@@ -119,7 +125,7 @@ var Progress$$1 = { render: function render() {
 			if (this.shape) {
 				return this.shape;
 			} else {
-				return globalOptions.defaultShape;
+				return exports.globalOptions.defaultShape;
 			}
 		},
 		finalWidth: function finalWidth() {
@@ -230,7 +236,7 @@ var Progress$$1 = { render: function render() {
 
 // import { setOptions } from './options'
 
-var globalOptions = {};
+exports.globalOptions = {};
 
 function registerComponents(Vue, prefix) {
 	Vue.component(prefix + 'progress', Progress$$1);
@@ -240,14 +246,14 @@ var plugin = {
 	// eslint-disable-next-line no-undef
 	version: "0.0.1",
 	install: function install(Vue, options) {
-		globalOptions = Object.assign({}, {
+		exports.globalOptions = Object.assign({}, {
 			installComponents: true,
 			componentsPrefix: 'loading-',
 			defaultShape: 'circle'
 		}, options);
 
-		if (globalOptions.installComponents) {
-			registerComponents(Vue, globalOptions.componentsPrefix);
+		if (exports.globalOptions.installComponents) {
+			registerComponents(Vue, exports.globalOptions.componentsPrefix);
 		}
 	}
 };
@@ -263,5 +269,9 @@ if (GlobalVue) {
 	GlobalVue.use(plugin);
 }
 
-export { globalOptions, Progress$$1 as Progress };
-export default plugin;
+exports.Progress = Progress$$1;
+exports['default'] = plugin;
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+})));

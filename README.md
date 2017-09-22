@@ -1,6 +1,6 @@
-# vue-progress
+# vue-progress-path
 
-[![npm](https://img.shields.io/npm/v/vue-progress.svg) ![npm](https://img.shields.io/npm/dm/vue-progress.svg)](https://www.npmjs.com/package/vue-progress)
+[![npm](https://img.shields.io/npm/v/vue-progress-path.svg) ![npm](https://img.shields.io/npm/dm/vue-progress-path.svg)](https://www.npmjs.com/package/vue-progress-path)
 [![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)
 
 Progress bars and loading indicators
@@ -10,18 +10,18 @@ Progress bars and loading indicators
 ## Installation
 
 ```
-npm i -S vue-progress
+npm i -S vue-progress-path
 ```
 
 ```
-yarn add vue-progress
+yarn add vue-progress-path
 ```
 
 ## Usage
 
 ```js
-import 'vue-progress/dist/vue-progress.css'
-import VueProgress from 'vue-progress'
+import 'vue-progress-path/dist/vue-progress-path.css'
+import VueProgress from 'vue-progress-path'
 
 Vue.use(VueProgress, {
   // defaultShape: 'circle',
@@ -33,15 +33,15 @@ You can now use the `<loading-progress>` component.
 ## CSS customization example
 
 ```css
-.vue-progress path {
+.vue-progress-path path {
 	stroke-width: 12;
 }
 
-.vue-progress .progress {
+.vue-progress-path .progress {
 	stroke: red;
 }
 
-.vue-progress .background {
+.vue-progress-path .background {
 	stroke: #edd;
 }
 ```

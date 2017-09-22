@@ -5,7 +5,7 @@ import { minify } from 'uglify-es'
 const config = Object.assign({}, base, {
 	exports: 'named',
 	output: {
-		file: 'dist/vue-progress.min.js',
+		file: 'dist/vue-progress-path.min.js',
 		format: 'iife',
 	},
 	name: 'VueProgress',
