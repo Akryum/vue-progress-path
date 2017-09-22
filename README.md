@@ -38,15 +38,15 @@ You can customize the progress components with CSS:
 
 ```css
 .vue-progress-path path {
-	stroke-width: 12;
+  stroke-width: 12;
 }
 
 .vue-progress-path .progress {
-	stroke: red;
+  stroke: red;
 }
 
 .vue-progress-path .background {
-	stroke: #edd;
+  stroke: #edd;
 }
 ```
 
