@@ -3,7 +3,7 @@
 [![npm](https://img.shields.io/npm/v/vue-progress-path.svg) ![npm](https://img.shields.io/npm/dm/vue-progress-path.svg)](https://www.npmjs.com/package/vue-progress-path)
 [![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)
 
-Progress bars and loading indicators
+Progress bars and loading indicators that can take any form!
 
 > This library is Work In Progress.
 
@@ -34,6 +34,8 @@ You can now use the `<loading-progress>` component.
 
 ## CSS customization example
 
+You can customize the progress components with CSS:
+
 ```css
 .vue-progress-path path {
 	stroke-width: 12;
@@ -50,6 +52,8 @@ You can now use the `<loading-progress>` component.
 
 ## Examples
 
+Google Material Design-like spinner:
+
 ```html
 <loading-progress
   :progress="progress"
@@ -63,6 +67,8 @@ You can now use the `<loading-progress>` component.
 />
 ```
 
+Semi-circle:
+
 ```html
 <loading-progress
   :progress="progress"
@@ -73,6 +79,8 @@ You can now use the `<loading-progress>` component.
   size="64"
 />
 ```
+
+Custom SVG path:
 
 ```html
 <loading-progress
