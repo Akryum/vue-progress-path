@@ -7,6 +7,8 @@ Progress bars and loading indicators
 
 > This library is Work In Progress.
 
+[Live Demo](https://akryum.github.io/vue-progress-path/)
+
 ## Installation
 
 ```
