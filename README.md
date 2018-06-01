@@ -9,6 +9,12 @@ Progress bars and loading indicators that can take any form!
 
 [Live Demo](https://akryum.github.io/vue-progress-path/)
 
+<p>
+  <a href="https://www.patreon.com/akryum" target="_blank">
+    <img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" alt="Become a Patreon">
+  </a>
+</p>
+
 ## Installation
 
 ```
