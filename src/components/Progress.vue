@@ -7,17 +7,32 @@
 			:width="finalWidth"
 			:height="finalHeight"
 			:viewBox="`0 0 ${finalWidth} ${finalHeight}`">
+			<defs>
+				<linearGradient
+					v-if="hasGradient"
+					:id="`progressGradient-${_uid}`"
+					gradientUnits="userSpaceOnUse">
+					<stop
+						v-for="(color, index) in gradient"
+						:key="`${color.color}-${index}`"
+						:offset="`${color.offset}%`" :stop-color="color.color"
+					/>
+				</linearGradient>
+			</defs>
 			<g :transform="`translate(${(finalWidth - size) / 2}, ${(finalHeight - size) / 2}) rotate(${finalRotation}, ${size / 2}, ${size / 2})`">
 				<g class="container">
 					<path
 						v-if="!hideBackground"
 						class="background"
+						:stroke-linecap="rounded ? 'round' : ''"
 						:d="path"
 					/>
 					<path
 						ref="path"
-						class="progress"
+						:class="{'progress': !hasGradient}"
 						:d="path"
+						:stroke-linecap="rounded ? 'round' : ''"
+						:stroke="`url(#progressGradient-${_uid})`"
 						:stroke-dasharray="`${finalDasharray} ${finalDasharray}`"
 						:stroke-dashoffset="finalDashoffset"
 					/>
@@ -86,6 +101,14 @@ export default {
 			type: [String, Number],
 			default: 0,
 		},
+	    gradient: {
+	      type: [Array, Boolean],
+	      default: false,
+	    },
+	    rounded: {
+	      type: Boolean,
+	      default: false
+	    }
 	},
 
 	data () {
@@ -172,6 +195,10 @@ export default {
 				return path
 			}
 		},
+
+	    hasGradient() {
+	      return Array.isArray(this.gradient)
+	    },
 	},
 
 	watch: {
