@@ -11,6 +11,8 @@
 				:indeterminate="indeterminate"
 				:counter-clockwise="counterClockwise"
 				:hide-background="hideBackground"
+				:gradient="gradient"
+				:rounded="rounded"
 				size="64"
 				rotate
 				fillDuration="2"
@@ -22,15 +24,19 @@
 				:indeterminate="indeterminate"
 				:counter-clockwise="counterClockwise"
 				:hide-background="hideBackground"
+				:gradient="gradient"
+				:rounded="rounded"
 				shape="semicircle"
 				size="64"
 			/>
-			
+
 			<loading-progress
 				:progress="progress"
 				:indeterminate="indeterminate"
 				:counter-clockwise="counterClockwise"
 				:hide-background="hideBackground"
+				:gradient="gradient"
+				:rounded="rounded"
 				shape="line"
 				size="200"
 				width="200"
@@ -42,6 +48,8 @@
 				:indeterminate="indeterminate"
 				:counter-clockwise="counterClockwise"
 				:hide-background="hideBackground"
+				:gradient="gradient"
+				:rounded="rounded"
 				shape="square"
 				size="64"
 				fill-duration="2"
@@ -52,6 +60,8 @@
 				:indeterminate="indeterminate"
 				:counter-clockwise="counterClockwise"
 				:hide-background="hideBackground"
+				:gradient="gradient"
+				:rounded="rounded"
 				shape="M10 80 C 40 10, 65 10, 95 80 S 150 150, 180 80"
 				size="180"
 				fill-duration="2"
@@ -62,6 +72,8 @@
 				:indeterminate="indeterminate"
 				:counter-clockwise="counterClockwise"
 				:hide-background="hideBackground"
+				:gradient="gradient"
+				:rounded="rounded"
 				shape="M50,3l12,36h38l-30,22l11,36l-31-21l-31,21l11-36l-30-22h38z"
 				size="100"
 				fill-duration="2"
@@ -109,6 +121,26 @@
 					hide background
 				</label>
 			</div>
+
+			<div>
+				<label>
+					<input
+						type="checkbox"
+						v-model="withGradient"
+					/>
+					with gradient
+				</label>
+			</div>
+
+			<div>
+				<label>
+					<input
+						type="checkbox"
+						v-model="rounded"
+					/>
+					rounded
+				</label>
+			</div>
 		</div>
 	</div>
 </template>
@@ -128,6 +160,8 @@ export default {
 			progress: 0,
 			counterClockwise: false,
 			hideBackground: false,
+			withGradient: false,
+			rounded: false,
 			installCode,
 			usageCode,
 		}
@@ -146,6 +180,16 @@ export default {
 		progressDisplay () {
 			return `${Math.round(this.progress * 100)}%`
 		},
+
+		gradient () {
+			return this.withGradient ?
+				[
+					{ offset: 0, color: '#25ba00'},
+					{ offset: 50, color: '#ffc000'},
+					{ offset: 100, color: '#FF0000'},
+				]
+				: false
+		}
 	},
 }
 </script>

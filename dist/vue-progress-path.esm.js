@@ -14,7 +14,9 @@ var shapes = {
 };
 
 var Progress$$1 = { render: function render() {
-		var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { staticClass: "vue-progress-path", class: _vm.cssClass, style: _vm.style }, [_c('svg', { attrs: { "width": _vm.finalWidth, "height": _vm.finalHeight, "viewBox": '0 0 ' + _vm.finalWidth + ' ' + _vm.finalHeight } }, [_c('g', { attrs: { "transform": 'translate(' + (_vm.finalWidth - _vm.size) / 2 + ', ' + (_vm.finalHeight - _vm.size) / 2 + ') rotate(' + _vm.finalRotation + ', ' + _vm.size / 2 + ', ' + _vm.size / 2 + ')' } }, [_c('g', { staticClass: "container" }, [!_vm.hideBackground ? _c('path', { staticClass: "background", attrs: { "d": _vm.path } }) : _vm._e(), _c('path', { ref: "path", staticClass: "progress", attrs: { "d": _vm.path, "stroke-dasharray": _vm.finalDasharray + ' ' + _vm.finalDasharray, "stroke-dashoffset": _vm.finalDashoffset } })])])])]);
+		var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { staticClass: "vue-progress-path", class: _vm.cssClass, style: _vm.style }, [_c('svg', { attrs: { "width": _vm.finalWidth, "height": _vm.finalHeight, "viewBox": '0 0 ' + _vm.finalWidth + ' ' + _vm.finalHeight } }, [_c('defs', [_vm.hasGradient ? _c('linearGradient', { attrs: { "id": 'progressGradient-' + _vm._uid, "gradientUnits": "userSpaceOnUse" } }, _vm._l(_vm.gradient, function (color, index) {
+			return _c('stop', { key: color.color + '-' + index, attrs: { "offset": color.offset + '%', "stop-color": color.color } });
+		})) : _vm._e()], 1), _c('g', { attrs: { "transform": 'translate(' + (_vm.finalWidth - _vm.size) / 2 + ', ' + (_vm.finalHeight - _vm.size) / 2 + ') rotate(' + _vm.finalRotation + ', ' + _vm.size / 2 + ', ' + _vm.size / 2 + ')' } }, [_c('g', { staticClass: "container" }, [!_vm.hideBackground ? _c('path', { staticClass: "background", attrs: { "stroke-linecap": _vm.rounded ? 'round' : '', "d": _vm.path } }) : _vm._e(), _c('path', { ref: "path", class: { 'progress': !_vm.hasGradient }, attrs: { "d": _vm.path, "stroke-linecap": _vm.rounded ? 'round' : '', "stroke": 'url(#progressGradient-' + _vm._uid + ')', "stroke-dasharray": _vm.finalDasharray + ' ' + _vm.finalDasharray, "stroke-dashoffset": _vm.finalDashoffset } })])])])]);
 	}, staticRenderFns: [],
 	name: 'Progress',
 
@@ -69,6 +71,14 @@ var Progress$$1 = { render: function render() {
 		width: {
 			type: [String, Number],
 			default: 0
+		},
+		gradient: {
+			type: [Array, Boolean],
+			default: false
+		},
+		rounded: {
+			type: Boolean,
+			default: false
 		}
 	},
 
@@ -142,6 +152,9 @@ var Progress$$1 = { render: function render() {
 				}
 				return path;
 			}
+		},
+		hasGradient: function hasGradient() {
+			return Array.isArray(this.gradient);
 		}
 	},
 
@@ -252,7 +265,6 @@ var plugin = {
 	}
 };
 
-// Auto-install
 var GlobalVue = null;
 if (typeof window !== 'undefined') {
 	GlobalVue = window.Vue;
